@@ -44,6 +44,7 @@ The solution implements an intelligent orchestrator agent system that continuous
 ### Core Components
 
 #### 1. Knowledge Base (Pinecone Vector Database)
+![Upload to Pinecone](docs/workflow-images/upload_to_pinecone_n8n.png)
 - **Purpose**: Centralized repository of construction best practices
 - **Content**: 4-5 curated PDF documents including lessons learned and standard procedures
 - **Technology**: Pinecone vector database for semantic search capabilities
@@ -95,8 +96,6 @@ The solution implements an intelligent orchestrator agent system that continuous
 - Priority-based routing
 ![Sample Alert](docs/workflow-images/sample_alert.png)
 
-**For Updating knowledge base**
-![Upload to Pinecone](docs/workflow-images/upload_to_pinecone_n8n.png)
 ---
 
 ## Implementation Journey
