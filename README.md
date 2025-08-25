@@ -37,6 +37,7 @@ Construction Project Managers face significant challenges in monitoring daily pr
 
 ## Solution Architecture
 
+
 ### Overview
 The solution implements an intelligent orchestrator agent system that continuously monitors Procore daily logs, analyzes them against a knowledge base of construction best practices, and generates proactive alerts with specific financial and schedule impact assessments.
 
@@ -49,17 +50,19 @@ The solution implements an intelligent orchestrator agent system that continuous
 - **Maintenance**: Dynamic update process when agent performance indicates knowledge gaps
 
 #### 2. Orchestrator Agent
+![Orchestrator Agent](docs/workflow-images/orchestrator_agent_n8n.png)
 - **Role**: Central intelligence coordinating all system components
 - **Responsibilities**:
   - Procore API authentication and access management
   - Tool coordination and data flow management
   - Decision-making for additional API calls
   - Alert generation and distribution
-- **Technology**: Ollama and Anthropic Claude (locally hosted)
+- **Technology**:Gemini and Ollama(locally hosted)
 
 #### 3. Specialized Tools
 
 **Monitor Procore API Tool**
+![Daily Log Monitor](docs/workflow-images/daily_log_monitor_n8n.png)
 - Polls 6+ daily log types every 3 hours (configurable to event-driven)
 - Log types monitored:
   - Manpower logs
@@ -71,12 +74,14 @@ The solution implements an intelligent orchestrator agent system that continuous
 - Data cleaning and preprocessing
 
 **Get Additional API Tool**
+![Get Additional API](docs/workflow-images/get_addition_api_n8n.png)
 - Semantic understanding of 380+ Procore APIs
 - Uses OpenAPI specifications for intelligent endpoint selection
 - Dynamic API calling based on context analysis
 - Data aggregation and cleaning
 
 **Run Analytics Tool**
+![Run Analysis](docs/workflow-images/run_analysis_n8n.png)
 - Daily log data summarization
 - Cause, effect, and impact analysis
 - Knowledge base consultation for best practices
@@ -84,10 +89,14 @@ The solution implements an intelligent orchestrator agent system that continuous
 - Alert generation with specific metrics
 
 **Send Alert Tool**
+![Send Alerts](docs/workflow-images/send_alerts_n8n.png)
 - Email-based alert distribution
 - Rich formatting with actionable insights
 - Priority-based routing
+![Sample Alert](docs/workflow-images/sample_alert.png)
 
+**For Updating knowledge base**
+![Upload to Pinecone](docs/workflow-images/upload_to_pinecone_n8n.png)
 ---
 
 ## Implementation Journey
