@@ -94,6 +94,8 @@ The solution implements an intelligent orchestrator agent system that continuous
 - Email-based alert distribution
 - Rich formatting with actionable insights
 - Priority-based routing
+
+
 ![Sample Alert](docs/workflow-images/sample_alert.png)
 
 ---
