@@ -47,8 +47,8 @@ The solution implements an intelligent orchestrator agent system that continuous
 ![Upload to Pinecone](docs/workflow-images/upload_to_pinecone_n8n.png)
 - **Purpose**: Centralized repository of construction best practices
 - **Content**: 4-5 curated PDF documents including lessons learned and standard procedures
-- **Technology**: Pinecone vector database for semantic search capabilities
-- **Maintenance**: Dynamic update process when agent performance indicates knowledge gaps
+- **Technology**: Pinecone vector database for semantic search capabilities, RAG for grounded responses
+- **Maintenance**: Implementation in place for adding future docs if agent performance indicates knowledge gaps
 
 #### 2. Orchestrator Agent
 ![Orchestrator Agent](docs/workflow-images/orchestrator_agent_n8n.png)
@@ -58,7 +58,7 @@ The solution implements an intelligent orchestrator agent system that continuous
   - Tool coordination and data flow management
   - Decision-making for additional API calls
   - Alert generation and distribution
-- **Technology**:Gemini and Ollama(locally hosted)
+- **Technology**:LLM (Gemini, used Ollama locally hosted for Dev)
 
 #### 3. Specialized Tools
 
@@ -72,14 +72,14 @@ The solution implements an intelligent orchestrator agent system that continuous
   - Daily construction reports
   - Weather condition logs
   - Field engineer notes
-- Data cleaning and preprocessing
+- Data cleaning and preprocessing using Python Code
 
 **Get Additional API Tool**
 ![Get Additional API](docs/workflow-images/get_addition_api_n8n.png)
 - Semantic understanding of 380+ Procore APIs
 - Uses OpenAPI specifications for intelligent endpoint selection
 - Dynamic API calling based on context analysis
-- Data aggregation and cleaning
+- Data aggregation and cleaning using Python 
 
 **Run Analytics Tool**
 ![Run Analysis](docs/workflow-images/run_analysis_n8n.png)
@@ -93,7 +93,7 @@ The solution implements an intelligent orchestrator agent system that continuous
 ![Send Alerts](docs/workflow-images/send_alerts_n8n.png)
 - Email-based alert distribution
 - Rich formatting with actionable insights
-- Priority-based routing
+
 
 
 ![Sample Alert](docs/workflow-images/sample_alert.png)
